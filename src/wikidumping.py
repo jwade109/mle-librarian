@@ -230,6 +230,13 @@ class WikiDumper(commands.Cog):
             log.info(f"Saving attachment to {filename}")
             await att.save(filename)
 
+        if not os.path.exists(filename):
+            if script_name:
+                await ctx.send(f"`{script_name}` is not the name of any predefined script file.")
+                return
+            await ctx.send("Uh oh, failed to download the attached file.")
+            return
+
         tokens = split_file_into_messages(filename)
         if not tokens:
             await ctx.send("Failed to parse the provided script file.")
