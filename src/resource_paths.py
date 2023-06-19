@@ -23,14 +23,13 @@ def ckws(path):
     return check_exists(WORKSPACE_DIRECTORY + path)
 
 
-GENERATED_FILES_DIR = ckws("/generated")
 MLE_YAML = ckws("/persistent/mle.yaml")
 MLE_SCRIPTS_DIR = ckws("/mle-scripts")
 
 
 # returns a unique filename stamped with the current time.
 # good for files we want to look at later
-def stamped_fn(prefix, ext, dir=GENERATED_FILES_DIR):
+def stamped_fn(prefix, ext, dir):
     if not os.path.exists(dir):
         os.mkdir(dir)
     return f"{dir}/{prefix}-{datetime.now().strftime('%Y-%m-%dT%H-%M-%S.%f')}.{ext}"
