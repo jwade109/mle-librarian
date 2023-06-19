@@ -1,7 +1,5 @@
 # Clark the MLE Librarian
 
----
-
 ## `!post`
 
 Write a predefined series of formatted messages to a Discord text channel.
@@ -35,8 +33,6 @@ Valid YAML (`.yml`) files look generally like this:
   A: Here you go!"
 ```
 
----
-
 ## `!whitelist`, `!blacklist`
 
 Adds a text channel to the `!post` whitelist, allowing them to be `!post`ed to. Correspondingly, `!blacklist` removes channels from the whitelist.
@@ -46,8 +42,6 @@ To view the whitelist: `!whitelist`
 To add a channel: `!whitelist #channel`
 
 To remove: `!blacklist #channel`
-
----
 
 ## `!staff`, `!hire`, `!fire`
 
